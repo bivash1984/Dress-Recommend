@@ -1,0 +1,147 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title>Search Page</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1 style="text-align: center">Predict Product Recommendation For a Giant Retailer</h1>
+
+    <div class="form">
+        <form action="/predict" method="POST">
+            <input type="number" name="dress_id" id="dress_id" placeholder="Dress ID">
+
+            <select name="Style" required>
+                <option value="" disabled selected hidden>Choose a Style</option>
+                <option value="Sexy">Sexy</option>
+                <option value="Casual">Casual</option>
+                <option value="vintage">vintage</option>
+                <option value="Brief">Brief</option>
+                <option value="cute">cute</option>
+                <option value="bohemian">bohemian</option>
+                <option value="Novelty">Novelty</option>
+                <option value="Flare">Flare</option>
+                <option value="party">party</option>
+                <option value="work">work</option>
+                <option value="OL">OL</option>
+                <option value="fashion">fashion</option>
+            </select>
+
+            <select name="Price" required>
+                <option value="" disabled selected hidden>Choose a Price Range</option>
+                <option value="Low">Low</option>
+                <option value="High">High</option>
+                <option value="Average">Average</option>
+                <option value="Medium">Medium</option>
+                <option value="very-high">very-high</option>
+            </select>
+
+            <input type="number" name="Rating" id="Rating" placeholder="Rating 1-5">
+
+            <select name="Size" required>
+                <option value="" disabled selected hidden>Choose a Size</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+                <option value="free">free</option>
+                <option value="S">S</option>
+            </select>
+
+            <select name="Season" required>
+                <option value="" disabled selected hidden>Choose a Season</option>
+                <option value="Summer">Summer</option>
+                <option value="Autumn">Autumn</option>
+                <option value="Spring">Spring</option>
+                <option value="Winter">Winter</option>
+            </select>
+
+            <select name="NeckLine" required>
+                <option value="" disabled selected hidden>Choose a NeckLine</option>
+                <option value="o-neck">o-neck</option>
+                <option value="v-neck">v-neck</option>
+                <option value="boat-neck">boat-neck</option>
+                <option value="peterpan-collor">peterpan-collor</option>
+                <option value="ruffled">ruffled</option>
+                <option value="turndowncollor">turndowncollor</option>
+                <option value="slash-neck">slash-neck</option>
+                <option value="mandarin-collor">mandarin-collor</option>
+                <option value="open">open</option>
+                <option value="sqare-collor">sqare-collor</option>
+                <option value="Sweetheart">Sweetheart</option>
+                <option value="Scoop">Scoop</option>
+                <option value="halter">halter</option>
+                <option value="backless">backless</option>
+                <option value="bowneck">bowneck</option>
+            </select>
+
+            <select name="SleeveLength" required>
+                <option value="" disabled selected hidden>Choose a SleeveLength</option>
+                <option value="Sleeveless">Sleeveless</option>
+                <option value="Petal">Petal</option>
+                <option value="full">full</option>
+                <option value="butterfly">butterfly</option>
+                <option value="short">short</option>
+                <option value="threequarter">threequarter</option>
+                <option value="half">half</option>
+                <option value="cap-sleeves">cap-sleeves</option>
+                <option value="turndowncollor">turndowncollor</option>
+            </select>
+
+            <select name="waiseline" required>
+                <option value="" disabled selected hidden>Choose a waiseline</option>
+                <option value="empire">empire</option>
+                <option value="natural">natural</option>
+                <option value="princess">princess</option>
+                <option value="dropped">dropped</option>
+            </select>
+
+            <select name="Material" required>
+                <option value="" disabled selected hidden>Choose a Material Type</option>
+                <option value="microfiber">microfiber</option>
+                <option value="polyster">polyster</option>
+                <option value="silk">silk</option>
+                <option value="chiffonfabric">chiffonfabric</option>
+                <option value="cotton">cotton</option>
+                <option value="nylon">nylon</option>
+                <option value="other">other</option>
+                <option value="milksilk">milksilk</option>
+                <option value="linen">linen</option>
+                <option value="rayon">rayon</option>
+                <option value="lycra">lycra</option>
+                <option value="mix">mix</option>
+                <option value="acrylic">acrylic</option>
+                <option value="spandex">spandex</option>
+                <option value="lace">lace</option>
+                <option value="modal">modal</option>
+                <option value="cashmere">cashmere</option>
+                <option value="viscos">viscos</option>
+                <option value="knitting">knitting</option>
+                <option value="wool">wool</option>
+            </select>
+
+            <select name="PatternType" required>
+                <option value="" disabled selected hidden>Choose a PatternType</option>
+                <option value="animal">animal</option>
+                <option value="print">print</option>
+                <option value="dot">dot</option>
+                <option value="solid">solid</option>
+                <option value="patchwork">patchwork</option>
+                <option value="striped">striped</option>
+                <option value="geometric">geometric</option>
+                <option value="plaid">plaid</option>
+                <option value="leopard">leopard</option>
+                <option value="floral">floral</option>
+                <option value="character">character</option>
+                <option value="splice">splice</option>
+            </select>
+
+            <input type="number" name="total_sale" id="total_sale" placeholder="No. of Product Sold">
+
+            <input type="submit" value="Predict">
+        </form>
+    </div>
+</div>
+{% endblock %}
