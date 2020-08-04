@@ -1,6 +1,22 @@
-FROM continuumio/anaconda3:4.4.0
-COPY . /usr/app/
-EXPOSE 5000
-WORKDIR /usr/app/
+FROM python:3.6
+
+RUN pip install virtualenv
+ENV VIRTUAL_ENV=/venv
+RUN virtualenv venv -p python3
+ENV PATH="VIRTUAL_ENV/bin:$PATH"
+
+WORKDIR /app
+ADD . /app
+
+# Install dependencies
 RUN pip install -r requirements.txt
-CMD python main.py
+
+# copying all files over
+COPY . /app
+
+# Expose port 
+ENV PORT 8501
+
+# cmd to launch app when container is run
+CMD python run main.py
+
